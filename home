@@ -1,0 +1,14 @@
+<script>
+    clearActiveMenu();
+    $('#home-nav').addClass('nav-home-active');   
+    
+</script>
+
+<div class="slider-wrapper theme-default">
+    <div id="slider" class="nivoSlider">
+        <img src="http://assets.codecloudapp.com/sites/552fd83f6e6f643209000000/image/png/1447863150000/Farmers_Market.png" data-thumb="images/bg-home3.png" alt="" style="display: none;">
+        <img class="nivo-main-image" src="http://assets.codecloudapp.com/sites/552fd83f6e6f643209000000/e29889ec9dd47a4b885ef4b729b046cb/bg-home3_2.png" style="display: inline;">
+        <div class="nivo-caption"></div>
+    </div>
+    <div id="htmlcaption" class="nivo-html-caption"></div>
+</div>
