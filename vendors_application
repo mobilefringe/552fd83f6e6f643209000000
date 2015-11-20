@@ -1,0 +1,415 @@
+<script>
+    clearActiveMenu();
+    $('#vendors-nav').addClass('nav-vendors-active');
+    $('.content-top').attr("id", "vendors");
+    
+  
+    $( document ).ready(function() {
+    //$('#datepicker').datepick({dateFormat: 'yyyy-mm-dd'});
+   
+
+    $( "#datepicker" ).datepicker();
+    
+    $('#full-season').on('change', function() {
+        $('#short-term').not(this).prop('checked', false);  
+    });
+    
+    $('#short-term').on('change', function() {
+        $('#full-season').not(this).prop('checked', false);  
+    });
+    
+     $('#hydro-yes').on('change', function() {
+        $('#hydro-no').not(this).prop('checked', false);  
+    });
+    
+    $('#hydro-no').on('change', function() {
+        $('#hydro-yes').not(this).prop('checked', false);  
+    });
+});
+
+  function validateApplication(){
+
+      
+     
+        if($('#business-name').val() == ''){
+            $('.mCSB_container').css('top','-400px');
+            $('.mCSB_dragger').css('top','105px');
+            $("#business-name").focus();
+            return false;
+        }else if( $('#contact-name').val() == ''){
+            $('.mCSB_container').css('top','-490px');
+            $('.mCSB_dragger').css('top','128px');
+            $("#contact-name").focus();
+            return false;
+        }else if( $('#address').val() == ''){
+            $('.mCSB_container').css('top','-575px');
+            $('.mCSB_dragger').css('top','150px');
+            $("#address").focus();
+            return false;
+        }else if( $('#postal-code').val() == ''){
+            $('.mCSB_container').css('top','-645px');
+            $('.mCSB_dragger').css('top','168px');
+            $("#postal-code").focus();
+            return false;
+        }else if( $('#area-phone').val() == '' || $('#area-phone').val().length != 3){
+            $('.mCSB_container').css('top','-721px');
+            $('.mCSB_dragger').css('top','188px');
+            $("#area-phone").focus();
+            return false;
+        }else if( $('#middle-phone').val() == '' || $('#middle-phone').val().length != 3){
+            $('.mCSB_container').css('top','-721px');
+            $('.mCSB_dragger').css('top','188px');
+            $("#middle-phone").focus();
+            return false;
+        }else if( $('#last-phone').val() == '' || $('#last-phone').val().length != 4){
+            $('.mCSB_container').css('top','-721px');
+            $('.mCSB_dragger').css('top','188px');
+            $("#last-phone").focus();
+            return false;
+        }else if( !validateEmail($('#email').val())){
+            $('.mCSB_container').css('top','-909px');
+            $('.mCSB_dragger').css('top','237px');
+            $("#email").focus();
+            return false;
+        } else if(!($('#full-season').is(':checked')) && !($('#short-term').is(':checked'))){
+            $('.mCSB_container').css('top','-1270px');
+            $('.mCSB_dragger').css('top','331px');
+            $("#full-season").focus();
+            return false;
+            
+        }else if( $('#datepicker').val() == ''){
+            $('.mCSB_container').css('top','-1374px');
+            $('.mCSB_dragger').css('top','358px');
+            $("#datepicker").focus();
+            return false;
+        } else if(!($('#hydro-yes').is(':checked')) && !($('#hydro-no').is(':checked'))){
+            $('.mCSB_container').css('top','-1460px');
+            $('.mCSB_dragger').css('top','380px');
+            $("#hydro-yes").focus();
+            return false;
+        }   
+        
+        
+        var area_phone = $('#area-phone').val();
+        var middle_phone = $('#middle-phone').val();
+        var last_phone = $('#last-phone').val();
+        var phone_number = area_phone + middle_phone + last_phone;
+        $('#phone-number').val(phone_number);
+        
+        var area_fax = $('#area-fax').val();
+        var middle_fax = $('#middle-fax').val();
+        var last_fax = $('#last-fax').val();
+        var fax_number = area_fax + middle_fax + last_fax;
+        $('#fax-number').val(fax_number);
+        
+        if($('#full-season').is(':checked')){
+            $('#season-check').val('full season');
+        }else if($('#short-term').is(':checked')){
+            $('#season-check').val('short term');
+        }
+        
+        if($('#hydro-yes').is(':checked')){
+            $('#hydro-check').val('yes');
+        } else if($('#hydro-no').is(':checked')){
+            $('#hydro-check').val('no');    
+        }
+        
+    
+       // $.post( "http://mallmaverickstaging.com/send_contact_email", { 'send_to': "epower@20VIC.com", 'subject': "Farmers' Market Vendors Application", 'body': {"Business Name": $('#business-name').val(), "Contact Name": $('#contact-name').val(), "Address": $('#address').val(), "Phone Number":$('#phone-number').val(),"Fax Number":$('#fax-number').val(), "Email" : $('#email').val(), "Ontario Farm Registration Number":$('#registration-number').val(), "Number of Weeks": $('#season-check').val(), "Start Date": $('#datepicker').val(), "Hydro": $('#hydro-check').val(), "Number of sales areas required": $('#number-area').val() , "Number of extra tables required": $('#number-table').val() , "List of Specific items to be sold":$('#item-list').val()} });
+        
+        
+        
+        
+         $.ajax({
+                url : "http://mallmaverickstaging.com/send_contact_email",
+                type: "POST",
+                data : { 'send_to': "epower@20vic.com", 'subject': "Farmers' Market Vendors Application", 'body': {"Business Name": $('#business-name').val(), "Contact Name": $('#contact-name').val(), "Address": $('#address').val(), "Phone Number":$('#phone-number').val(),"Fax Number":$('#fax-number').val(), "Email" : $('#email').val(), "Ontario Farm Registration Number":$('#registration-number').val(), "Number of Weeks": $('#season-check').val(), "Start Date": $('#datepicker').val(), "Hydro": $('#hydro-check').val(), "Number of sales areas required": $('#number-area').val() , "Number of extra tables required": $('#number-table').val() , "List of Specific items to be sold":$('#item-list').val()} },
+                success: function(data, textStatus, jqXHR)
+                {
+                    $('#vendors-content2').hide('fast');
+                     $('#vendors-content3').show('fast');
+                },
+                error: function (jqXHR, textStatus, errorThrown)
+                {
+                    $('#vendors-content2').hide('fast');
+                     $('#vendors-content4').show('fast');
+                }
+            });
+        return false;
+    }
+    
+    function validateEmail(email) {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        return re.test(email);
+    }
+</script>
+<style>
+    h2{
+    font-size: 160%;
+      font-style: normal;
+      font-weight: bold;
+      color: #cbe19b;
+    }
+    h3{
+        float:left;
+        font-size: 100%;
+        font-family: inherit;
+        font-style: normal;
+        font-weight: normal;
+        color: #ffffff;
+        width:100%;
+        margin-top:30px;
+        margin-bottom:10px;
+    }
+    p{
+        font-size: 95%;
+        font-style: normal;
+        font-weight: normal;
+        color: #ffffff;
+    }
+    .form{
+        float:left;
+    }
+    .vendors-application{
+        font-family: "Lucida Grande","Lucida Sans Unicode", Tahoma, sans-serif;
+        letter-spacing: .01em;
+        width:300px;
+        margin-left: 20px;
+        text-align:left;
+        text-transform: none;
+        margin-bottom:20px;
+    }
+    label{
+        color:#ffffff;
+        width:100%;
+        float:left;
+        margin-bottom:8px;
+        margin-top:25px;
+    }
+    select{
+        width:40%;
+        float:left;
+        background-color:rgba(0,0,0,0.2);
+        height:30px;
+        color:white;
+    }
+    .req{
+        color: red;
+        font-weight: bold;
+    }
+    input.text{
+        border-top: 1px solid #7c7c7c;
+        border-left: 1px solid #c3c3c3;
+        border-right: 1px solid #c3c3c3;
+        border-bottom: 1px solid #ddd;
+        background-color:rgba(0,0,0,0.2);
+        padding: 4px 0;
+        padding-left:10px;
+        font-family: inherit;
+        font-style: normal;
+        font-weight: normal;
+        color: #ffffff;
+        font-size: 90%;
+        float:left;
+    }
+    textarea{
+        width:100%;
+         background-color:rgba(0,0,0,0.2);
+         color:white;
+         float:left;
+         resize:none;
+         font-size:90%;
+    }
+    .phone-box{
+        float:left;
+        text-align:center;
+    }
+    .phone-box p{
+        margin-bottom:0px;
+    }
+    .symbol{
+          font-size: 80%;
+          line-height:0px;
+          font-weight:bold;
+          font-family: inherit;
+          color: #ffffff;
+          margin-left:5px;
+          margin-right:5px;
+    }
+    .setup{
+        font-size: 80%;
+        font-family: inherit;
+        font-style: normal;
+        font-weight: normal;
+        color: #ffffff;
+        float:left;
+        margin-top:0px;
+        margin-bottom:0px;
+        width:100%;
+        line-height:20px;
+    }
+    .week_text{
+        width: 100%;
+        float:left;
+    }
+    .checkbox{
+        float:left;
+        padding: 0;
+        width: 13px;
+        height: 13px;
+        margin:0px;
+        margin-bottom:10px;
+    }
+    .checkboxLabel{
+        margin:0px;
+        margin-left:10px;
+        font-size:80%;
+        float:left;
+        width:90%;
+        margin-bottom:10px;
+    }
+    .submit-btn{
+        margin-top:30px;
+        float:left;
+        font-size:120%;
+    }
+    .date-info{
+        float:left;
+        color:white;
+        font-size:70%;
+        margin-left:15px;
+        margin-top:7px;
+    }
+</style>
+    <div id="vendors-content3" style="display:none">
+        <h2>Thank you</h2>
+        
+        <p>We will review your application and contact you shortly.</p>
+    </div>
+<div id="vendors-content4" style="display:none">
+        <h1>Sorry</h1>
+        <p>your entry cannot be processed at this time. Please try again later.</p>
+    </div>
+
+<div id="vendors-content2" class="mCustomScrollbar _mCS_1">
+
+    <div class="mCustomScrollBox mCS-light-thick" id="mCSB_1">
+        <div class="mCSB_container" >
+            <h1 class="dotted">Vendors Application</h1>
+            <div class="vendors-application form">
+                <h2>Farmers' Market</h2>
+                <p style="line-height:25px;">Pickering Town Centre would like to invite you to submit your application for Pickering Town Centre Farmers’ Market, running every Tuesday from June to October, 2016.</p>
+                
+                <label>Business Name:<span class="req"> *</span></label>
+                <input id="business-name" class="text" type="text" style="width:60%;" maxlength="255" />
+                
+                <label>Contact Name:<span class="req"> *</span></label>
+                <input id="contact-name" class="text" type="text" style="width:60%;" maxlength="255" />
+                
+                <label>Address:<span class="req"> *</span></label>
+                <input id="address" class="text" type="text" style="width:60%;" maxlength="255" />
+                
+                <label>Postal Code:<span class="req"> *</span></label>
+                <input id="postal-code" class="text" type="text" style="width:30%;" maxlength="255" />
+                
+                <input type="hidden" id="phone-number" />
+                <label>Phone:<span class="req"> *</span></label>
+                <span class="phone-box">
+                    <input id="area-phone" class="text" type="text" size="3"   maxlength="3" style="text-align:center;padding-left:0px;" />
+                    <p>###</p>
+                </span>
+                <span class="phone-box symbol">
+                    <p>-</p>
+                </span>
+                <span class="phone-box">
+                    <input id="middle-phone" class="text" type="text" size="3"  maxlength="3" style="text-align:center;padding-left:0px;" />
+                    <p>###</p>
+                </span>
+                <span class="phone-box symbol">
+                    <p>-</p>
+                </span>
+                <span class="phone-box">
+                    <input id="last-phone" class="text" type="text" size="4"  maxlength="4" style="text-align:center;padding-left:0px;" />
+                    <p>####</p>
+                </span>
+                
+                <input type="hidden" id="fax-number" />
+                <label>Fax:</label>
+                <span class="phone-box">
+                    <input id="area-fax" class="text" type="text" size="3" maxlength="3" style="text-align:center;padding-left:0px;"/>
+                    <p>###</p>
+                </span>
+                <span class="phone-box symbol">
+                    <p>-</p>
+                </span>
+                <span class="phone-box">
+                    <input id="middle-fax" class="text" type="text" size="3" maxlength="3" style="text-align:center;padding-left:0px;"/>
+                    <p>###</p>
+                </span>
+                <span class="phone-box symbol">
+                    <p>-</p>
+                </span>
+                <span class="phone-box">
+                    <input id="last-fax" class="text" type="text" size="4" maxlength="4" style="text-align:center;padding-left:0px;"/>
+                    <p>####</p>
+                </span>
+                
+                <label>Email Address:<span class="req"> *</span></label>
+                <input id="email" class="text" type="email" style="width:60%;" maxlength="255"/>
+                
+                <label>Ontario Farm Registration No.(if applicable):</label>
+                <input id="registration-number" class="text" type="text" style="width:60%;" maxlength="255" />
+                
+                <h3>SETUP FEES</h3>
+                <p class="setup">$35 PER SALES AREA</p>
+                <p class="setup">Includes setup of:</p>
+                <p class="setup">One 10’ x 10’ tent </p>
+                <p class="setup">One 8’ table with black skirt </p>
+                <p class="setup">One chair </p>
+                <p class="setup">ADDITIONAL TABLES: $10 PER TABLE</p>
+                
+                <input id="season-check" type="hidden" />
+                <p class="week_text" style="margin-top:25px;">NUMBER OF WEEKS:<span class="req"> *</span></p>
+                <input id="full-season" class="checkbox" type="checkbox" value="full season" /><label class="checkboxLabel">Full Season (18 Weeks)</label>
+                <input id="short-term" class="checkbox" type="checkbox" value="short term" /><label class="checkboxLabel">Short-Term Vendor (5 consecutive weeks – please select dates below)</label>
+                
+                
+                <label>Start Date (Please select a Tuesday):<span class="req"> *</span></label>
+                <input id="datepicker" class='text'/><span class="date-info">MM/DD/YYYY</span>
+                
+                <input id="hydro-check" type="hidden" />
+                <p class="week_text">Hydro:<span class="req"> *</span></p>
+                <input id="hydro-yes" class="checkbox" type="checkbox" value="yes"/><label class="checkboxLabel">Yes, I require hydro for my setup.</label>
+                <input id="hydro-no" class="checkbox" type="checkbox" value="no" /><label class="checkboxLabel">No, I do not require hydro for my setup.</label>
+                
+                <label>Number of sales areas required:</label>
+                <select id="number-area">
+                    <option value="0" selected="selected" disabled>-Please Select-</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                
+                <label>Number of extra tables required:</label>
+                <select id="number-table" >
+                    <option value="0" selected="selected" disabled>-Please Select-</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                
+                <label>List of specific Items to be sold. (Please list all items)</label>
+                <textarea id="item-list" rows="10" cols="50"></textarea>
+                
+                <h3>APPLICATION SUBMISSION</h3>
+                 <p class="setup">Please click 'Submit' below to submit your application. A member of our marketing team will be in contact with you.</p>
+            
+                <input type="button" onclick="validateApplication()" value="Submit" class="submit-btn"/>
+            </div>
+        </div>
+    </div>
+</div>
