@@ -183,7 +183,7 @@ h4 {
 	background-repeat: no-repeat;
 	float:left;
 	z-index:1;
-	position:absolute;
+	position:absolute#;
 	}
 #nav ul {
 	paddimg:0;
@@ -437,6 +437,7 @@ h4 {
 	background-image: url(http://kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/8f2ef62faf60dfca698e609b937986ec/bg-vendors.png);
 	background-repeat: no-repeat;
 	background-position: right top;
+	padding-bottom: 30px;
 }
 #partners {
 	background-image: url(http://kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/852d242eb3b3cc3f15876fb158741d9f/bg-partners.png);
