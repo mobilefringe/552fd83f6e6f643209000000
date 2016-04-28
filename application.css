@@ -183,6 +183,7 @@ h4 {
 	background-repeat: no-repeat;
 	float:left;
 	z-index:1;
+	position:absolute;
 	}
 #nav ul {
 	paddimg:0;
