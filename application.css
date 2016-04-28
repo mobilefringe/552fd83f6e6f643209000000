@@ -433,7 +433,7 @@ h4 {
 	background-image: url(http://kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/8f2ef62faf60dfca698e609b937986ec/bg-map.png);
 	background-repeat: no-repeat;
 	background-position: right top;
-	padding-bottom: 30px;
+	height: 100%;
 }
 #vendors {
 	background-image: url(http://kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/8f2ef62faf60dfca698e609b937986ec/bg-vendors.png);
