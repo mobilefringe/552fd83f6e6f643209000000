@@ -427,11 +427,13 @@ h4 {
 #food-drive {
 	background-image: url(http://kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/8f2ef62faf60dfca698e609b937986ec/bg-fooddrive.jpg);
 	background-repeat: no-repeat;
+	padding-bottom: 30px;
 }
 #map {
 	background-image: url(http://kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/8f2ef62faf60dfca698e609b937986ec/bg-map.png);
 	background-repeat: no-repeat;
 	background-position: right top;
+	padding-bottom: 30px;
 }
 #vendors {
 	background-image: url(http://kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/8f2ef62faf60dfca698e609b937986ec/bg-vendors.png);
@@ -443,11 +445,12 @@ h4 {
 	background-image: url(http://kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/852d242eb3b3cc3f15876fb158741d9f/bg-partners.png);
 	background-repeat: no-repeat;
 	background-position: right top;
-}
+	padding-bottom: 30px;
 #recipes {
 	background-image: url(http://kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/bd2df06c7b9223e8d183521396924256/bg-recipes.png);
 	background-repeat: no-repeat;
 	background-position: right top;
+	padding-bottom: 30px;
 }
 #gallery {
 	background-image: url(http://kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/8f2ef62faf60dfca698e609b937986ec/bg-gallery.png);
