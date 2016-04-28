@@ -6,7 +6,6 @@
 
 <div class="slider-wrapper theme-default">
     <div id="slider" class="nivoSlider">
-        <a href="http://pickeringtowncentre.com/events/ptc-important-update" target="_blank"><img src="http://assets.codecloudapp.com/sites/552fd83f6e6f643209000000/image/png/undefined/Farmers_Market (1)1.png" data-thumb="images/bg-home3.png" alt="" style="display: none;"></a>
         <a href="http://pickeringtowncentre.com/events/ptc-important-update" target="_blank"><img class="nivo-main-image" src="http://assets.codecloudapp.com/sites/552fd83f6e6f643209000000/image/png/undefined/Farmers_Market (1)1.png" style="display: inline;"></a>
         <div class="nivo-caption"></div>
     </div>
