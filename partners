@@ -1,0 +1,18 @@
+<script>
+    clearActiveMenu();
+    $('#partners-nav').addClass('nav-partners-active');
+    $('.content-top').attr("id", "partners");
+</script>
+
+<div id="partners-content">
+    <h2>Partners</h2>
+    <img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/b1509b6a26cbbd831df089e2a60a0568/partners-ptc.png" width="180" height="136" alt="pickering town centre">
+    <img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/b1509b6a26cbbd831df089e2a60a0568/partners-durhamfarmfresh.png" width="160" height="136" alt="durham farm fresh">
+    <img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/b1509b6a26cbbd831df089e2a60a0568/partners-durhamsustainability.png" width="168" height="95" alt="durham sustain ability">
+    <img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/b1509b6a26cbbd831df089e2a60a0568/partners-pickeringcares.png" width="172" height="95" alt="pickering cares">
+    <img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/b1509b6a26cbbd831df089e2a60a0568/partners-durhamwestartscentre.png" width="122" height="174" alt="durham west arts centre" style="float:left;margin-left:40px;">
+    <img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/b1509b6a26cbbd831df089e2a60a0568/partners-creativemathandmusic.png" width="218" height="101" alt="creative math and music">
+    <img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/b1509b6a26cbbd831df089e2a60a0568/partners-cityofpickering.png" width="218" alt="city of pickering">
+    <img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/b1509b6a26cbbd831df089e2a60a0568/partners-greenbelt.png" alt="Green Belt">
+    <img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/b1509b6a26cbbd831df089e2a60a0568/partners-thenewsadvertiser.png" alt="the news advertiser ajax/pickering" style="margin-top:-100px;">
+</div>
