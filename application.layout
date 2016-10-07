@@ -53,7 +53,7 @@
 
 
 <script>
-    setEndPoint('//www.pickeringtowncentre.com/api/v2/PTC/all.json');
+    setEndPoint('//www.mallmaverick.com/api/v2/PTC/all.json?_=1475871718598');
             sessionStorage.setItem('primary_locale', 'en-CA');
         sessionStorage.setItem('secondary_locale', 'fr-CA');
      $(document).ready(function(){
