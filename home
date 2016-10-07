@@ -1,0 +1,13 @@
+<script>
+    clearActiveMenu();
+    $('#home-nav').addClass('nav-home-active');   
+    
+</script>
+
+<div class="slider-wrapper theme-default">
+    <div id="" class="">
+        <a href="//pickeringtowncentre.com/events/ptc-important-update" target="_blank"><img class="nivo-main-image" src="//codecloud.cdn.speedyrails.net/sites/57f7fabc6e6f6449b4020000/image/png/undefined/Farmers_Market (1)1.png" style="display: inline;"></a>
+        <div class="nivo-caption"></div>
+    </div>
+    <div id="htmlcaption" class="nivo-html-caption"></div>
+</div>
