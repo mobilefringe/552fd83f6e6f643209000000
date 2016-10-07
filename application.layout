@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+<title>{{meta_title}}</title>
+   <meta property="og:title" content="{{meta_title}}" />
+   <meta property="og:description" content="{{meta_description}}" />
+   <meta property="og:image" content="{{meta_img}}" />
+   <meta charset="utf-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description" content="{{meta_description}}" />
+   <meta name="keywords" content="{{meta_keywords}}" />
+   <meta name="author" content="" />
+   <META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+  <script>
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+     ga('create', 'UA-50587834-39', 'auto');
+     ga('send', 'pageview');
+</script>
+<link href="//fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Asul" rel="stylesheet" type="text/css">
+<link href="/application.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/fancybox.css" media="screen">
+<link href="/scroll.css" rel="stylesheet">
+<!--<link href="/datepicker.css" rel="stylesheet">-->
+
+
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="/fancybox.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.js"></script>
+<script src="//mallmaverick.codecloudapp.com/mallmaverick.js?v=0.3"></script>
+<script src="//mallmaverick.codecloudapp.com/mustache_mallmaverick.js?v=0.3"></script>
+
+
+<!-- custom scrollbars plugin -->
+<script src="/scroll.js"></script>
+<script src="/application.js"></script>
+
+<!--<script src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/145b5617a2a85b6ef2c3d662b08bcfcd/plugin.js"></script>-->
+<!--<script src="/datepicker.js"></script>-->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+ 
+   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+ 
+
+
+<script>
+    setEndPoint('//www.pickeringtowncentre.com/api/v2/PTC/all.json');
+            sessionStorage.setItem('primary_locale', 'en-CA');
+        sessionStorage.setItem('secondary_locale', 'fr-CA');
+     $(document).ready(function(){
+
+     $(".test").hover(function() {
+            $("#tests").show();
+          }, function(){
+            $("#tests").hide();
+          });
+     });
+ 
+</script>
+
+
+<script>
+
+ 
+function clearActiveMenu(){
+    $('#home-nav').removeClass('nav-home-active');
+    $('#home-nav').addClass('nav-home');
+    
+    $('#events-nav').removeClass('nav-events-active');
+    $('#events-nav').addClass('nav-events');
+    
+    $('#recipes-nav').removeClass('nav-recipes-active');
+    $('#recipes-nav').addClass('nav-recipes');
+    
+    $('#partners-nav').removeClass('nav-partners-active');
+    $('#partners-nav').addClass('nav-partners');
+    
+    $('#vendors-nav').removeClass('nav-vendors-active');
+    $('#vendors-nav').addClass('nav-vendors');
+    
+    $('#gallery-nav').removeClass('nav-gallery-active');
+    $('#gallery-nav').addClass('nav-gallery');
+}
+
+</script>
+
+
+<script>
+		(function($){
+			$(window).load(function(){
+					$("#events-content,#vendors2b-content, #recipes-content2, #vendors-content, #vendors-content2, #recipes-content, #vendors2-content, #partners-content").mCustomScrollbar({
+					scrollButtons:{
+						enable:true
+					},
+					theme:"light-thick"
+				});
+});
+			$(".fancybox").fancybox({
+		openEffect	: 'none',
+		closeEffect	: 'none'
+	});
+			   
+
+		})(jQuery);
+	</script>
+    <title>{{meta_title}}</title>
+   
+<style type="text/css">.fancybox-margin{margin-right:0px;}</style>
+    
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="content-top" id="home">
+            <div id="nav">
+                <a href="/"><img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/3984c67194e834e0ae80b2403b57858d/FM-logo.png" width="212" height="129" alt="Farmers Market" class="logo"></a>
+                <ul>
+                    <li><a id="home-nav" class="nav-home" href="/">&nbsp;</a></li>
+                    
+                    <li><a id="recipes-nav" href="/recipes" class="nav-recipes">&nbsp;</a></li>
+                    <li><a id="events-nav" href="/events" class="nav-events">&nbsp;</a></li>
+                    <li><a id="partners-nav" href="/partners" class="nav-partners">&nbsp;</a></li>
+                
+                    <li class="test"><a id="vendors-nav" href="/vendors" class="nav-vendors"></a>
+                    <ul id="tests"><li style="padding-top:10px;"><a href="/vendors" class="secondary">Vendors List</a></li><li><a href="/vendors_application" class="secondary">Vendors Application</a></li></ul>
+                    </li>
+                    <li><a id="gallery-nav" href="/gallery" class="nav-gallery">&nbsp;</a></li>
+                    <li>
+                        <a href="//www.facebook.com/Pickeringtowncentre" target="_blank"><img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/3984c67194e834e0ae80b2403b57858d/facebook.png" alt="facebook"></a> 
+                        <a href="//twitter.com/PickeringTC" target="_blank"><img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/3984c67194e834e0ae80b2403b57858d/twitter.png" width="31" height="29" alt="twitter"></a> 
+                        <a href="//instagram.com/pickeringtowncentre" target="_blank"><img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/3984c67194e834e0ae80b2403b57858d/instagram.png" width="31" height="29" alt="instagram"></a>
+                    </li>
+                 
+                </ul>
+                <div id="navlogos" style="margin-top:100px;">
+                <img src="//kodekloud.s3.amazonaws.com/sites/552fd83f6e6f643209000000/3984c67194e834e0ae80b2403b57858d/PTC-logo2.png" alt="pickering town centre"></div>
+             </div>
+             
+            {{yield}}
+
+
+        <br clear="all">
+        </div>
+        <div id="footer">
+        <a href="/map">View Map &nbsp;|&nbsp;</a> <a href="/recipes">Recipes &nbsp;|&nbsp;</a> <a href="/events">Events &nbsp;|&nbsp;</a> 
+        <a href="/partners">Partners &nbsp;|&nbsp;</a> <a href="/food_drive">Food Drive &nbsp;|&nbsp;</a> 
+        <a href="/vendors">Vendors &nbsp;|&nbsp;</a> <a href="/gallery">Gallery &nbsp;|&nbsp;</a> 
+        <a href="//www.facebook.com/Pickeringtowncentre" target="_blank">Visit us on facebook</a>
+        <p>© 2014 Pickering Town Centre</p>
+        </div>
+    </div>
+    
+</body>
